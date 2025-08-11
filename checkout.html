@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — MenSkincare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html">Men<b>Skincare</b><span class="dot">.</span></a>
+      <div style="margin-left:auto"></div>
+    </div>
+  </header>
+
+  <main class="section container" id="checkoutRoot">
+    <h1 class="h2">Checkout</h1>
+    <p class="lead">Demo only — no real payment is processed.</p>
+
+    <div class="grid" style="grid-template-columns:2fr 1fr; gap:24px; align-items:start">
+      <!-- Order summary -->
+      <section>
+        <h3>Order summary</h3>
+        <div id="summary" class="cart-items" style="margin-top:10px"></div>
+      </section>
+
+      <!-- Payment / Shipping -->
+      <section>
+        <h3>Details</h3>
+        <form id="checkoutForm" class="p" style="border:1px solid var(--ring); border-radius:12px">
+          <label style="display:block; margin:.5rem 0 .25rem">Full name</label>
+          <input type="text" required value="John Doe" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
+
+          <label style="display:block; margin:1rem 0 .25rem">Email</label>
+          <input type="email" required value="john@example.com" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
+
+          <label style="display:block; margin:1rem 0 .25rem">Card number</label>
+          <input type="text" required value="4242 4242 4242 4242" inputmode="numeric" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
+
+          <div class="row" style="display:flex; gap:10px; margin-top:10px">
+            <div style="flex:1">
+              <label style="display:block; margin:.25rem 0">Expiry</label>
+              <input type="text" required value="12/28" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
+            </div>
+            <div style="flex:1">
+              <label style="display:block; margin:.25rem 0">CVC</label>
+              <input type="text" required value="123" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
+            </div>
+          </div>
+
+          <button class="cta" type="submit" style="margin-top:14px; width:100%">Place order (demo)</button>
+          <p class="tiny" style="margin-top:6px">Using demo data; nothing is charged.</p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="checkout.js" defer></script>
+</body>
+</html>

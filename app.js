@@ -122,3 +122,19 @@ document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') cartDrawer.clas
 
 // Auto-activate "all" chip on load
 document.querySelector('.chip[data-filter="all"]').classList.add('active');
+
+// --- Make regimen tiles filter the grid and scroll to products
+document.querySelectorAll('.tile.link').forEach(tile => {
+  tile.addEventListener('click', (e) => {
+    const key = tile.dataset.filter || 'all';
+    // Apply filter and scroll
+    applyFilter(key);
+    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// --- Send to checkout when user clicks the drawer button
+document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+  window.location.href = 'checkout.html';
+});
+
