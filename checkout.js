@@ -108,40 +108,45 @@ el.applyPromo?.addEventListener('click', () => {
 });
 
 // ---- Submit (demo) --------------------------------------------------------
-el.form.addEventListener('submit', (e) => {
+el.form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const items = normalizeCart(readCart());
   if (!items.length) return;
 
-  const orderId = Math.random().toString(36).slice(2,8).toUpperCase();
+  const fd = new FormData(el.form);
+  const customer = {
+    name: fd.get('name'),
+    email: fd.get('email'),
+    address: fd.get('address'),
+    city: fd.get('city'),
+    postcode: fd.get('postcode')
+  };
   const t = totals(items, { promoCode });
 
-  // Clear cart
-  saveCart([]);
+  try {
+    const resp = await fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items, totals: t, customer })
+    });
+    if (!resp.ok) throw new Error(await resp.text());
+    const { id } = await resp.json();
 
-  // Show success state
-  document.getElementById('checkoutRoot').innerHTML = `
-    <h1 class="h2">Thanks — order placed!</h1>
-    <p class="lead">Your demo order <strong>#${orderId}</strong> has been recorded.</p>
-    <div class="p" style="border:1px solid var(--ring);border-radius:12px;margin-top:12px">
-      <h3>Summary</h3>
-      ${items.map(i => `
-        <div class="cart-item">
-          <img src="${i.img}" alt="${i.name}">
-          <div>
-            <div style="font-weight:600">${i.name}</div>
-            <div class="muted">${money(i.price)} × ${i.qty}</div>
-          </div>
-          <div style="font-weight:700">${money(i.price * i.qty)}</div>
-        </div>
-      `).join('')}
-      <div class="row" style="display:flex;justify-content:space-between;margin-top:12px">
-        <span class="muted">Total paid (demo)</span><strong>${money(t.total)}</strong>
-      </div>
+    // Clear cart
+    saveCart([]);
+
+    // Show success state
+    document.getElementById('checkoutRoot').innerHTML = `
+      <h1 class="h2">Thanks — order placed!</h1>
+      <p class="lead">Your order <strong>#${id}</strong> has been recorded.</p>
       <p style="margin-top:12px"><a class="cta" href="index.html">Back to store</a></p>
-    </div>
-  `;
+    `;
+  } catch (err) {
+    console.error(err);
+    alert('Sorry — placing the order failed. Please try again.');
+  }
 });
+
 
 // first render
 render();
