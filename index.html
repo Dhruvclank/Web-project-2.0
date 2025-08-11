@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MenSkincare — Clean routines for real results</title>
+  <meta name="description" content="Minimal skincare storefront demo with a clean Apple-like aesthetic." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="nav">
+    <div class="nav-inner container">
+      <a class="brand" href="#">Men<b>Skincare</b><span class="dot">.</span></a>
+      <nav class="links">
+        <a href="#products">Shop</a>
+        <a href="#regimens">Regimens</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <form class="search" id="searchForm" role="search" aria-label="Search products">
+        <input id="searchInput" type="text" placeholder="Search skincare…" />
+        <button type="submit">Search</button>
+      </form>
+
+      <button id="cartBtn" class="cart" aria-label="Open cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.45A1.993 1.993 0 0 0 10 19h9v-2h-9l1.1-2h7.45a2 2 0 0 0 1.79-1.11l3.58-6.49A1 1 0 0 0 23 5H6.21l-.94-2z"/></svg>
+        <span id="cartCount">0</span>
+      </button>
+      <button id="menuBtn" class="menu" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <a href="#products">Shop</a>
+    <a href="#regimens">Regimens</a>
+    <a href="#about">About</a>
+  </aside>
+
+  <!-- Cart drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Cart">
+    <div class="cart-head">
+      <h3>Your cart</h3>
+      <button id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-foot">
+      <div class="row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">£0.00</span>
+      </div>
+      <button class="cta" id="checkoutBtn">Checkout — demo</button>
+      <p class="muted">This is a portfolio demo (no payment).</p>
+    </div>
+  </aside>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Up to 30% off</span>
+        <h1>Simple skincare that just works.</h1>
+        <p>Clean ingredients, routine-first design, and clear results. Build a regimen that fits your life.</p>
+        <div class="stack">
+          <a class="cta" href="#products">Shop now</a>
+          <a class="cta secondary" href="#about">Why MenSkincare?</a>
+        </div>
+        <div class="pills">
+          <span class="pill" data-filter="cleanser">Cleanser</span>
+          <span class="pill" data-filter="moisturizer">Moisturizer</span>
+          <span class="pill" data-filter="spf">SPF</span>
+          <span class="pill" data-filter="serum">Serums</span>
+        </div>
+      </div>
+      <div>
+        <img class="hero-img" src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1600&auto=format&fit=crop" alt="Minimal skincare flat lay" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Regimens -->
+  <section id="regimens" class="section container">
+    <h2 class="h2">Build your routine</h2>
+    <p class="lead">Pick a regimen and customise as you go.</p>
+    <div class="grid grid-3">
+      <article class="tile">
+        <img src="https://images.unsplash.com/photo-1611930021937-1f9f1a59f19d?q=80&w=1200&auto=format&fit=crop" alt="Daily basics" />
+        <div class="p">
+          <h3>Daily Basics</h3>
+          <p class="muted">Cleanser + Moisturizer</p>
+        </div>
+      </article>
+      <article class="tile">
+        <img src="https://images.unsplash.com/photo-1629198721360-1b9e4b2f2e11?q=80&w=1200&auto=format&fit=crop" alt="Defend" />
+        <div class="p">
+          <h3>Defend</h3>
+          <p class="muted">Add SPF protection</p>
+        </div>
+      </article>
+      <article class="tile">
+        <img src="https://images.unsplash.com/photo-1604908554027-4d4726f9b2e9?q=80&w=1200&auto=format&fit=crop" alt="Target" />
+        <div class="p">
+          <h3>Target</h3>
+          <p class="muted">Serums for specific goals</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section container">
+    <div class="split">
+      <h2 class="h2">Featured products</h2>
+      <div class="filter-row">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="cleanser">Cleansers</button>
+        <button class="chip" data-filter="moisturizer">Moisturizers</button>
+        <button class="chip" data-filter="serum">Serums</button>
+        <button class="chip" data-filter="spf">SPF</button>
+      </div>
+    </div>
+
+    <div id="productGrid" class="grid grid-3"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section container about">
+    <div class="about-grid">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop" alt="Lab glassware" />
+      <div>
+        <h2 class="h2">Made simple. Backed by science.</h2>
+        <p class="lead">We focus on what works: effective actives, clean formulations, transparent percentages. No fluff. No perfume cloud.</p>
+        <ul class="bullets">
+          <li>Dermatologist reviewed</li>
+          <li>Vegan & cruelty-free</li>
+          <li>100% recyclable bottles</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container foot-grid">
+      <div>
+        <a class="brand" href="#">Men<b>Skincare</b><span class="dot">.</span></a>
+        <p class="muted">A portfolio demo by Dhruv Lal — front-end, product, and UX.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#products">All products</a>
+        <a href="#regimens">Regimens</a>
+        <a href="#about">About</a>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <p class="tiny center">© <span id="year"></span> Dhruv Lal. Demo only.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
