@@ -13,7 +13,7 @@
   <header class="nav">
     <div class="nav-inner container">
       <a class="brand" href="index.html">Men<b>Skincare</b><span class="dot">.</span></a>
-      <div style="margin-left:auto"></div>
+      <nav class="links"><a href="index.html#products">Shop</a></nav>
     </div>
   </header>
 
@@ -21,42 +21,71 @@
     <h1 class="h2">Checkout</h1>
     <p class="lead">Demo only — no real payment is processed.</p>
 
-    <div class="grid" style="grid-template-columns:2fr 1fr; gap:24px; align-items:start">
-      <!-- Order summary -->
+    <div class="grid" style="grid-template-columns:2fr 1fr;gap:24px;align-items:start">
+      <!-- Details -->
       <section>
-        <h3>Order summary</h3>
-        <div id="summary" class="cart-items" style="margin-top:10px"></div>
-      </section>
+        <form id="checkoutForm" class="p" style="border:1px solid var(--ring);border-radius:12px">
+          <h3>Contact</h3>
+          <label style="display:block;margin:.5rem 0 .25rem">Full name</label>
+          <input name="name" type="text" required value="John Doe" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:8px">
 
-      <!-- Payment / Shipping -->
-      <section>
-        <h3>Details</h3>
-        <form id="checkoutForm" class="p" style="border:1px solid var(--ring); border-radius:12px">
-          <label style="display:block; margin:.5rem 0 .25rem">Full name</label>
-          <input type="text" required value="John Doe" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
+          <label style="display:block;margin:1rem 0 .25rem">Email</label>
+          <input name="email" type="email" required value="john@example.com" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:8px">
 
-          <label style="display:block; margin:1rem 0 .25rem">Email</label>
-          <input type="email" required value="john@example.com" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
-
-          <label style="display:block; margin:1rem 0 .25rem">Card number</label>
-          <input type="text" required value="4242 4242 4242 4242" inputmode="numeric" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
-
-          <div class="row" style="display:flex; gap:10px; margin-top:10px">
-            <div style="flex:1">
-              <label style="display:block; margin:.25rem 0">Expiry</label>
-              <input type="text" required value="12/28" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
-            </div>
-            <div style="flex:1">
-              <label style="display:block; margin:.25rem 0">CVC</label>
-              <input type="text" required value="123" style="width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px">
-            </div>
+          <h3 style="margin-top:1.5rem">Shipping</h3>
+          <label style="display:block;margin:.5rem 0 .25rem">Address</label>
+          <input name="address" type="text" required value="221B Baker Street" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:8px">
+          <div class="row" style="display:flex;gap:10px;margin-top:10px">
+            <input name="city" placeholder="City" type="text" required value="London" style="flex:1;padding:10px;border:1px solid var(--ring);border-radius:8px">
+            <input name="postcode" placeholder="Postcode" type="text" required value="NW1 6XE" style="flex:1;padding:10px;border:1px solid var(--ring);border-radius:8px">
           </div>
 
-          <button class="cta" type="submit" style="margin-top:14px; width:100%">Place order (demo)</button>
-          <p class="tiny" style="margin-top:6px">Using demo data; nothing is charged.</p>
+          <h3 style="margin-top:1.5rem">Payment</h3>
+          <label style="display:block;margin:.5rem 0 .25rem">Card number</label>
+          <input name="card" type="text" required value="4242 4242 4242 4242" inputmode="numeric" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:8px">
+          <div class="row" style="display:flex;gap:10px;margin-top:10px">
+            <input name="exp" placeholder="MM/YY" type="text" required value="12/28" style="flex:1;padding:10px;border:1px solid var(--ring);border-radius:8px">
+            <input name="cvc" placeholder="CVC" type="text" required value="123" style="flex:1;padding:10px;border:1px solid var(--ring);border-radius:8px">
+          </div>
+
+          <button class="cta" type="submit" style="margin-top:14px;width:100%">Place order (demo)</button>
+          <p class="tiny" style="margin-top:6px">Nothing is charged — this is for demonstration.</p>
         </form>
       </section>
+
+      <!-- Summary -->
+      <aside class="p" style="border:1px solid var(--ring);border-radius:12px">
+        <h3>Order summary</h3>
+        <div id="summaryItems" class="cart-items" style="margin-top:10px"></div>
+
+        <div class="row" style="display:flex;justify-content:space-between;margin-top:12px">
+          <span class="muted">Subtotal</span><strong id="sumSubtotal">£0.00</strong>
+        </div>
+
+        <div class="row" style="display:flex;gap:8px;margin-top:12px">
+          <input id="promoInput" placeholder="Promo code (DEMO10)" style="flex:1;padding:10px;border:1px solid var(--ring);border-radius:8px">
+          <button id="applyPromo" class="cta secondary" type="button">Apply</button>
+        </div>
+        <div id="sumDiscountRow" class="row" style="display:none;justify-content:space-between;margin-top:8px">
+          <span class="muted">Promo</span><strong id="sumDiscount">−£0.00</strong>
+        </div>
+
+        <div class="row" style="display:flex;justify-content:space-between;margin-top:8px">
+          <span class="muted">Shipping</span><strong id="sumShipping">£0.00</strong>
+        </div>
+        <div class="row" style="display:flex;justify-content:space-between;margin-top:8px">
+          <span class="muted">VAT (20%)</span><strong id="sumVat">£0.00</strong>
+        </div>
+
+        <div class="row" style="display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--ring)">
+          <span>Total</span><strong id="sumTotal">£0.00</strong>
+        </div>
+      </aside>
     </div>
+
+    <p id="emptyMsg" class="muted" style="display:none;margin-top:16px">
+      Your cart is empty. <a href="index.html#products">Continue shopping</a>.
+    </p>
   </main>
 
   <script src="checkout.js" defer></script>

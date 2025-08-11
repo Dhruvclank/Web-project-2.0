@@ -1,0 +1,8 @@
+{
+  "name": "men-skincare",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/kv": "latest"
+  }
+}
