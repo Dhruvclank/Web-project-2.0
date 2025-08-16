@@ -124,3 +124,29 @@ body{
 .form input,.form textarea{ width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px; background:#fff; font:inherit; color:var(--ink) }
 .form textarea{ min-height:120px; resize:vertical }
 .form .actions{ margin-top:12px; display:flex; gap:10px }
+
+/* --- Hero carousel --- */
+.hero-carousel{ border-bottom:1px solid var(--ring); padding:0 }
+.carousel{ position:relative; overflow:hidden; }
+.car-track{ display:flex; transition:transform .5s ease; }
+.car-slide{
+  min-width:100%;
+  display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center;
+  padding:64px 24px; max-width:1200px; margin:0 auto;
+}
+.car-media img{ width:100%; height:auto; border-radius:var(--radius); display:block; background:var(--bg-soft) }
+.car-copy h1{ font-size:48px; line-height:1.08; margin:8px 0 12px; letter-spacing:-.02em }
+.car-dots{ position:absolute; left:50%; bottom:18px; transform:translateX(-50%); display:flex; gap:8px }
+.car-dots button{
+  width:8px; height:8px; border-radius:999px; border:0; background:rgba(0,0,0,.15); cursor:pointer
+}
+.car-dots button[aria-current="true"]{ background:#0f172a }
+.car-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:40px; height:40px; border-radius:999px; border:1px solid var(--ring);
+  background:#fff; color:var(--ink); cursor:pointer; display:grid; place-items:center;
+  box-shadow:0 10px 30px var(--ring);
+}
+.car-arrow.prev{ left:14px } .car-arrow.next{ right:14px }
+
+@media (max-width: 980px){ .car-slide{ grid-template-columns:1fr; padding:32px 16px } .car-copy h1{ font-size:34px } }

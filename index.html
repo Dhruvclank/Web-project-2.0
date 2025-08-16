@@ -60,28 +60,65 @@
   </aside>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="badge">Up to 30% off</span>
-        <h1>Simple skincare that just works.</h1>
-        <p>Clean ingredients, routine‑first design, and clear results. Build a regimen that fits your life.</p>
-        <div class="stack">
-          <a class="cta" href="#products">Shop now</a>
-          <a class="cta secondary" href="#about">Why MenSkincare?</a>
+<section class="hero hero-carousel">
+  <div class="carousel" id="heroCarousel" aria-roledescription="carousel">
+    <button class="car-arrow prev" aria-label="Previous slide">‹</button>
+    <button class="car-arrow next" aria-label="Next slide">›</button>
+
+    <div class="car-track">
+      <!-- Slide 1 -->
+      <article class="car-slide is-active">
+        <div class="car-media">
+          <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1600&q=80"
+               alt="Organic cleanser" loading="eager" decoding="async">
         </div>
-        <div class="pills">
-          <span class="pill" data-filter="cleanser">Cleanser</span>
-          <span class="pill" data-filter="moisturizer">Moisturizer</span>
-          <span class="pill" data-filter="spf">SPF</span>
-          <span class="pill" data-filter="serum">Serums</span>
+        <div class="car-copy">
+          <span class="badge">New</span>
+          <h1>Cleanse without compromise</h1>
+          <p>Gentle daily gel cleanser for clear, balanced skin.</p>
+          <div class="stack">
+            <a class="cta" href="#products">Shop cleanser</a>
+            <a class="cta secondary" href="#about">Learn more</a>
+          </div>
         </div>
-      </div>
-      <div>
-        <img class="hero-img" src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1600&q=80" alt="Minimal skincare flat lay" decoding="async" />
-      </div>
+      </article>
+
+      <!-- Slide 2 -->
+      <article class="car-slide">
+        <div class="car-media">
+          <img src="https://images.unsplash.com/photo-1596464716121-2f20e8b7c74b?auto=format&fit=crop&w=1600&q=80"
+               alt="Hydrating moisturizer" loading="lazy" decoding="async">
+        </div>
+        <div class="car-copy">
+          <span class="badge">Hydrate</span>
+          <h1>Lightweight moisture, all day</h1>
+          <p>Ceramide‑rich formula that won’t feel greasy.</p>
+          <div class="stack">
+            <a class="cta" href="#products">Shop moisturizer</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Slide 3 -->
+      <article class="car-slide">
+        <div class="car-media">
+          <img src="https://images.unsplash.com/photo-1591369822095-6645b4a8b3d5?auto=format&fit=crop&w=1600&q=80"
+               alt="SPF protection" loading="lazy" decoding="async">
+        </div>
+        <div class="car-copy">
+          <span class="badge">SPF 50</span>
+          <h1>Daily defense, zero white cast</h1>
+          <p>Broad‑spectrum protection for every skin tone.</p>
+          <div class="stack">
+            <a class="cta" href="#products">Shop SPF</a>
+          </div>
+        </div>
+      </article>
     </div>
-  </section>
+
+    <div class="car-dots" aria-label="Choose slide"></div>
+  </div>
+</section>
 
   <!-- Regimens -->
   <section id="regimens" class="section container">
