@@ -119,3 +119,8 @@ body{
   .grid-3{ grid-template-columns:1fr }
   .h2{ font-size:26px }
 }
+.form{ border:1px solid var(--ring); border-radius:12px; padding:16px; background:#fff }
+.form label{ display:block; margin:.6rem 0 .3rem; font-weight:600 }
+.form input,.form textarea{ width:100%; padding:10px; border:1px solid var(--ring); border-radius:8px; background:#fff; font:inherit; color:var(--ink) }
+.form textarea{ min-height:120px; resize:vertical }
+.form .actions{ margin-top:12px; display:flex; gap:10px }
