@@ -60,28 +60,42 @@
   </aside>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="badge">Up to 30% off</span>
-        <h1>Simple skincare that just works.</h1>
-        <p>Clean ingredients, routine‑first design, and clear results. Build a regimen that fits your life.</p>
-        <div class="stack">
-          <a class="cta" href="#products">Shop now</a>
-          <a class="cta secondary" href="#about">Why MenSkincare?</a>
+<section class="hero hero-carousel">
+  <div class="carousel" id="heroCarousel" aria-roledescription="carousel">
+    <button class="car-arrow prev" aria-label="Previous slide">‹</button>
+    <button class="car-arrow next" aria-label="Next slide">›</button>
+
+    <div class="car-track">
+
+         <!-- Slide 1 -->
+      <article class="car-slide is-active">
+        <div class="car-media">
+          <img src="cleanser.png" alt="Gentle Daily Gel Cleanser">
+          <a class="cta car-btn" href="#products">Shop Cleanser</a>
         </div>
-        <div class="pills">
-          <span class="pill" data-filter="cleanser">Cleanser</span>
-          <span class="pill" data-filter="moisturizer">Moisturizer</span>
-          <span class="pill" data-filter="spf">SPF</span>
-          <span class="pill" data-filter="serum">Serums</span>
-        </div>
+      </article>
+
+
+        <!-- Slide 2 -->
+    <article class="car-slide">
+      <div class="car-media">
+        <img src="moisturiser.png" alt="Hydrate Moisturizer">
+        <a class="cta car-btn" href="#products">Shop Moisturizer</a>
       </div>
-      <div>
-        <img class="hero-img" src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1600&q=80" alt="Minimal skincare flat lay" decoding="async" />
+    </article>
+
+    <!-- Slide 3 -->
+    <article class="car-slide">
+      <div class="car-media">
+        <img src="sunscreen.png" alt="SPF 50 Daily Defense">
+        <a class="cta car-btn" href="#products">Shop SPF</a>
       </div>
-    </div>
-  </section>
+    </article>
+  </div>
+
+    <div class="car-dots" aria-label="Choose slide"></div>
+  </div>
+</section>
 
   <!-- Regimens -->
   <section id="regimens" class="section container">
