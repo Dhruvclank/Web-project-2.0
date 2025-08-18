@@ -185,3 +185,6 @@ body{
 @media (max-width: 640px){
   .car-media img{ height:320px; }
 }
+
+/* hide any leftover text overlay blocks from earlier version */
+.car-copy { display: none !important; }
