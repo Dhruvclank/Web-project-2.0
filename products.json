@@ -3,6 +3,6 @@
   { "id":"mois-01","name":"Hydrate+ Moisturizer","tags":["moisturizer"],"price":16,"img":"moisturiser.png","blurb":"Lightweight daily hydration with ceramides." },
   { "id":"spf-01","name":"SPF 50 Daily Defense","tags":["spf"],"price":18,"img":"sunscreen.png","blurb":"No white cast. Broad spectrum protection." },
   { "id":"ser-01","name":"Vitamin C Serum 15%","tags":["serum"],"price":22,"img":"Vitamin-Serum.png","blurb":"Brighter, more even tone." },
-  { "id":"ser-02","name":"Niacinamide 10% Serum","tags":["serum"],"price":19,"img":"N-Serum.png","blurb":"Refines pores & reduces redness." },
+  { "id":"ser-02","name":"Niacinamide 10% Serum","tags":["serum"],"price":19,"img":"nSerum.png","blurb":"Refines pores & reduces redness." },
   { "id":"mois-02","name":"Night Repair Cream","tags":["moisturizer"],"price":20,"img":"Night.png","blurb":"Deeply nourishing overnight." }
 ]
