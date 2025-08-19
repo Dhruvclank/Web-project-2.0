@@ -1,17 +1,17 @@
 // ---- Basic inventory (authoritative price & stock) -----------------------
 const INVENTORY = {
   'cln-01': { name: 'Daily Gel Cleanser', price: 12, stock: 25,
-    img: 'https://images.unsplash.com/photo-1603656349530-b34457511a1f?auto=format&fit=crop&w=1400&q=80' },
-  'mois-01': { name: 'Hydrate+ Moisturizer', price: 16, stock: 30,
-    img: 'https://images.unsplash.com/photo-1606813907291-76a6dfb00d9b?auto=format&fit=crop&w=1400&q=80' },
+    img: 'cleanser.png' },
+  'mois-01': { name: 'Hydrate + Moisturizer', price: 16, stock: 30,
+    img: 'moisturiser.png' },
   'spf-01': { name: 'SPF 50 Daily Defense', price: 18, stock: 40,
-    img: 'https://images.unsplash.com/photo-1589985270826-4b7bba7083e3?auto=format&fit=crop&w=1400&q=80' },
+    img: 'sunscreen.png' },
   'ser-01': { name: 'Vitamin C Serum 15%', price: 22, stock: 20,
-    img: 'https://images.unsplash.com/photo-1604076913837-52ab5629fba9?auto=format&fit=crop&w=1400&q=80' },
+    img: 'Vitamin-Serum.png' },
   'ser-02': { name: 'Niacinamide 10% Serum', price: 19, stock: 20,
-    img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80' },
+    img: 'nSerum.png' },
   'mois-02': { name: 'Night Repair Cream', price: 20, stock: 15,
-    img: 'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?auto=format&fit=crop&w=1400&q=80' }
+    img: 'Night.png' }
 };
 
 // ---- Helpers --------------------------------------------------------------
